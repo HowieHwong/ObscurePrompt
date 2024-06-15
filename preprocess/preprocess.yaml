@@ -1,0 +1,7 @@
+api:
+  type: azure # or openai
+  endpoint: END_POINT
+  version: 2023-12-01-preview
+  key: API_KEY
+  model: gpt-4o
+

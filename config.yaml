@@ -1,0 +1,48 @@
+api:
+  type: azure # or openai
+  endpoint: END_POINT
+  version: 2023-12-01-preview
+  key: API_KEY
+
+
+device: cuda
+
+api_keys:
+  azure_openai: API_KEY
+  replicate_api_token: API_KEY
+  deepinfra_openai: API_KEY
+
+model_path_mapping:
+  Llama2-7b: meta-llama/Llama-2-7b-chat-hf
+  vicuna-7b: lmsys/vicuna-7b-v1.3
+  ChatGPT: gpt-3.5-turbo
+  GPT-4: gpt-4-turbo
+
+model_list:
+  - meta-llama/Llama-2-70b-chat-hf
+  - google/gemma-7b-it
+  - mistralai/Mixtral-8x7B-Instruct-v0.1
+  - meta-llama/Llama-2-13b-chat-hf
+  - meta-llama/Llama-2-7b-chat-hf
+  - mistralai/Mistral-7B-Instruct-v0.1
+  - openchat/openchat_3.5
+  - ChatGPT
+  - GPT-4
+
+replicate_model_mapping:
+  vicuna-13b: lucataco/vicuna-13b-v1.3:3166a8e442757658b9c23cec99d1553742e9ed2027ad7d2d99bcb4533260893e
+  vicuna-33b: lucataco/vicuna-33b-v1.3:373b7701a9993286eaa9b892277a81be71a1dd981d4f02da876d5864749f81ef
+
+deepinfra_model_mapping:
+  Llama2-70b: meta-llama/Llama-2-70b-chat-hf
+  Llama2-7b: meta-llama/Llama-2-7b-chat-hf
+  Llama3-8b: meta-llama/Meta-Llama-3-8B-Instruct
+  Llama3-70b: meta-llama/Meta-Llama-3-70B-Instruct
+
+save_model_name_mapping:
+  meta-llama/Llama-2-70b-chat-hf: Llama2-70b
+  meta-llama/Llama-2-13b-chat-hf: Llama2-13b
+  lucataco/vicuna-7b-v1.3: vicuna-7b
+  lucataco/vicuna-13b-v1.3: vicuna-13b
+  lucataco/vicuna-33b-v1.3: vicuna-33b
+

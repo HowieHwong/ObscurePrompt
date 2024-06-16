@@ -93,7 +93,6 @@ def ensemble_ASR(model, file_list):
     total_res = {}
     for file in file_list:
         with open('results/{}/{}'.format(model, file), 'r') as f:
-            # print(file)
             entries = json.load(f)
             for entry in entries:
                 if entry['original'] not in total_res:
@@ -107,46 +106,6 @@ def ensemble_ASR(model, file_list):
     proportion = num_contains_keywords / total_entries
     return float(proportion)
 
-# model = 'GPT-4'
-'''
-ASR: 0.4357798165137615
-ASR: 0.7408256880733946
-ASR: 0.573394495412844
-ASR: 0.3486238532110092
-ASR: 0.3967889908256881
-ASR: 0.5412844036697247
-ASR: 0.75
-ASR: 0.5389908256880733
-ASR: 0.36009174311926606
-ASR: 0.2981651376146789
-'''
-# model = 'GPT-4'
-'''
-ASR: 0.4495412844036697
-ASR: 0.4174311926605505
-ASR: 0.39449541284403666
-ASR: 0.059633027522935755
-ASR: 0.6376146788990826
-ASR: 0.5986238532110092
-ASR: 0.45412844036697253
-ASR: 0.4839449541284404
-ASR: 0.518348623853211
-ASR: 0.555045871559633
-'''
-
-model = 'Llama2-70b'
-'''
-ASR: 0.3142201834862385
-ASR: 0.5022935779816513
-ASR: 0.5160550458715596
-ASR: 0.573394495412844
-ASR: 0.2545871559633027
-ASR: 0.5
-ASR: 0.19495412844036697
-ASR: 0.34174311926605505
-ASR: 0.35779816513761464
-ASR: 0.47477064220183485
-'''
 
 # path = './results/' + model
 # json_files = os.listdir(path)
@@ -194,12 +153,11 @@ ASR: 0.47477064220183485
 #     print("no_option ", all_asr / len(no_option_all_combination))
 
 def get_robustness():
-    # model_name = ['ChatGPT', 'GPT-4', 'vicuna-7b', 'Llama2-7b', 'Llama2-70b', 'Llama3-8b', 'Llama3-70b']
-    model_name = ['Llama3-8b', 'Llama3-70b']
+    model_name = ['ChatGPT', 'GPT-4', 'vicuna-7b', 'Llama2-7b', 'Llama2-70b', 'Llama3-8b', 'Llama3-70b']
     for model in model_name:
         all_files = os.listdir('results/' + model)
 
-        all_files = [el for el in all_files if el.startswith('one_obscure')]
+        all_files = [el for el in all_files if el.startswith('obscure')]
         all_combination = get_combinations(all_files, 5)
         all_asr = 0
         all_asr_list = []
@@ -236,7 +194,7 @@ model_name = ['ChatGPT', 'GPT-4', 'vicuna-7b', 'Llama2-7b', 'Llama2-70b', 'Llama
 for model in model_name:
     all_files = os.listdir('results/' + model)
 
-    all_files = [el for el in all_files if el.startswith('deepinception')][0]
+    all_files = [el for el in all_files if el.startswith('obscure')]
     compute_ASR(model, all_files)
     # all_combination = get_combinations(all_files, 1)
     # all_asr = 0

@@ -46,3 +46,11 @@ save_model_name_mapping:
   lucataco/vicuna-13b-v1.3: vicuna-13b
   lucataco/vicuna-33b-v1.3: vicuna-33b
 
+evaluation_setting:
+  model_list:
+    - ChatGPT
+    - GPT-4
+    - Vicuna-7b
+    - Llama2-7b
+  result_file_path: result
+  combined_num: 5

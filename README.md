@@ -92,6 +92,54 @@ run_pipeline('Llama2-70b', 'obscure')
 run_pipeline('Vicuna-13b', 'obscure')
 ```
 
+### Step3: Evaluate your results
+
+We provide two types of ASR evaluation methods: Single ASR Evaluation (ASR for one result) and Combined ASR Evaluation (integrated prompts with multiple results).
+
+#### Configuration
+
+To run the evaluation, define the `model_list` in `config.yaml` under `evaluation_setting`. Here is an example configuration:
+
+```yaml
+evaluation_setting:
+  model_list:
+    - ChatGPT
+    - GPT-4
+    - Vicuna-7b
+    - Llama2-7b
+```
+
+If you want to run combined evaluation, set the `combined_num` in `config.yaml`.
+
+
+Define your result file path in `config.yaml` under `evaluation_setting`. For example, if your `result_file_path` is `res`, organize your results as follows:
+
+```
+res/ChatGPT/...
+res/Llama2-7b/...
+res/Other_model_in_model_list/...
+...
+```
+
+#### Running Evaluations
+
+
+To run the single evaluation, use the following command:
+
+```shell
+python script.py single
+```
+
+
+To run the combined evaluation, use the following command:
+
+```shell
+python script.py combined
+```
+
+
+
+
 ## Cite ObscurePrompt
 
 ```text

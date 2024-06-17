@@ -13,7 +13,7 @@ from openai import AzureOpenAI
 import replicate
 import yaml
 
-with open('config.yml', 'r') as file:
+with open('config.yaml', 'r') as file:
     config = yaml.safe_load(file)
 
 # Use values from the configuration

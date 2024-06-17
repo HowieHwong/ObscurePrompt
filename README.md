@@ -11,7 +11,7 @@ Powerful LLMs are then utilized to obscure the original prompt through iterative
 Comprehensive experiments show that our approach substantially improves upon previous methods in terms of attack effectiveness, maintaining efficacy against two prevalent defense mechanisms. 
 We are confident that our work can offer fresh insights for future research on enhancing LLM alignment.
 
-
+![method](https://github.com/HowieHwong/ObscurePrompt/blob/main/image/method.png)
 
 
 ## Usage
